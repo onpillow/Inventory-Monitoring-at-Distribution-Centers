@@ -1,0 +1,9 @@
+#For MACOS
+.DS_Store
+Icon?
+#general
+.ipynb_checkpoints/
+data/.ipynb_checkpoints/
+__pycache__/
+.env
+
