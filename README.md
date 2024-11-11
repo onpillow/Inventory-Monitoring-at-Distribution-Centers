@@ -14,6 +14,10 @@ To build this project:
 ## Model and Pipeline Design
 For the classification task, we use a pre-trained convolutional neural network (CNN) architecture, ResNet50, and fine-tune it on the Amazon Bin Image Dataset to predict object counts. By leveraging AWS SageMaker, we automate and scale the training, deployment, and monitoring of this model in a robust cloud-based infrastructure.
 
+Here is the high-level architecture of the project workflow:
+
+<img src="./readme_images/image8.png" alt="alt text" width="800"/>
+
 ## Project Set Up
 
 This project primarily uses the AWS SageMaker service for model training and deployment. The data is based on a subset list provided by the Udacity project [repo](https://github.com/udacity/nd009t-capstone-starter/tree/master/starter) and is sourced from the Amazon Bin Image Dataset. Please refer to that repository for more information on setup.
