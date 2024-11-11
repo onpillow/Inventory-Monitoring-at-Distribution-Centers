@@ -72,25 +72,25 @@ The hyperparameter tuning job was conducted on AWS SageMaker. The following key 
 - Batch Size: Options included 32, 64, 128, 256, and 512, balancing memory efficiency and gradient stability.
 - Epochs: Set between 10 to 40 to assess optimal training duration without overfitting or underfitting.
 
-<img src="./readme_images/image3.png" alt="alt text" width="500"/>
+<img src="./readme_images/image3.png" alt="alt text" width="600"/>
 
 The tuning objective was to minimize Validation Loss, parsed directly from training logs. Five jobs were executed sequentially, and the best configuration achieved a validation loss of 1.32 with the following settings:
 - Batch Size: 32
 - Epochs: 21
 - Learning Rate: 0.0023
 
-<img src="./readme_images/image4.png" alt="alt text" width="500"/>
+<img src="./readme_images/image4.png" alt="alt text" width="600"/>
 
 This configuration resulted in improved validation accuracy and generalization of the model, as demonstrated by the completion statuses and metric results from the SageMaker tuning job dashboard.
 
 ### Model Deployment
 The trained model is deployed to a SageMaker endpoint configured for real-time inference, accepting JPEG images and returning JSON predictions. The endpoint screenshot:
 
-<img src="./readme_images/img1.png" alt="alt text" width="500"/>
+<img src="./readme_images/img1.png" alt="alt text" width="600"/>
 
-Inference result for an image with 2 objects:
+Inference result for an image with 3 objects:
 
-<img src="./readme_images/image2.png" alt="alt text" width="500"/>
+<img src="./readme_images/image2.png" alt="alt text" width="600"/>
 
 ### Model Profiling and Debugging
 To ensure efficient model training, we used AWS SageMaker Debugger for profiling and debugging. This allowed us to monitor training performance, analyze resource utilization, and address potential bottlenecks.
@@ -106,9 +106,9 @@ Additionally, a custom Profiler Report was generated to analyze the system and f
 - Low GPU Utilization: The profiler flagged instances of low GPU utilization, indicating that batch size could be increased or other optimizations applied.
 - Step Outliers: Some step durations varied significantly, which suggests possible system bottlenecks.
 
-<img src="./readme_images/image6.png" alt="alt text" width="500"/>
+<img src="./readme_images/image6.png" alt="alt text" width="600"/>
 
 #### Visualization
 We utilized Amazon SageMaker’s `SMDebug` library for model debugging and profiling to monitor training performance, record key metrics, and plot learning curves. The chart below illustrates Training and Validation Loss Over Steps, providing insights into model convergence and helping to identify any issues with loss during training.
 
-<img src="./readme_images/image7.png" alt="alt text" width="500"/>
+<img src="./readme_images/image7.png" alt="alt text" width="600"/>
